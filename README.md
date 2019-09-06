@@ -5,9 +5,11 @@ O Objetivo deste projeto é desenvolver um aplicativo mobile para disponibilizar
 
 Utilizaremos Flutter para o desenvolvimento do aplicativo.
 
+Motivações: Muitas vezes as notícias geradas pelas entidades da UFLA não chegam ao seu público alvo. Com o aplicativo, os usuários poderão assinar o feed das entidades que consideram interessantes, e receberão notificações push sobre novidades publicadas.
+
 
 Participantes: 
-Bruno Jahel
+Bruno Jahel - Hard skills: Dev Frontend(Vue.js) - Soft skills: Comunicação
 Bruno Moreira
 Guilherme Teixera
 Gustavo Costa
