@@ -3,6 +3,8 @@ Trabalho da disciplina Modelagem e Implementação de Software (GCC132) ministra
 
 O Objetivo deste projeto é desenvolver um aplicativo mobile para disponibilizar boletins eletrônicos, publicados por departamentos/entidades da UFLA, que serão apresentados no aplicativo em formato de feed.
 
+Utilizaremos Flutter para o desenvolvimento do aplicativo.
+
 
 Participantes: 
 Bruno Jahel
