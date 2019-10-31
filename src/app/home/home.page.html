@@ -1,36 +1,37 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>
-      UFLANews
+      <img id="logo" src="../assets/icon/logo.png"/>
     </ion-title>
-    <ion-icon name="person" slot="end"></ion-icon>
+    <ion-icon id="fav-icon" name="person" slot="end"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <div class="ion-padding" >
     <ion-searchbar placeholder="Buscar Publicador" color="light"></ion-searchbar>
-    <ion-card class="card-container">
+    <ion-card class="card-container" size="1">
       <ion-row>
       <ion-col class="card-img">
-          <img  src="https://image.freepik.com/fotos-gratis/formas-geometricas-dentro-da-cavidade-quadrada-oca_105589-527.jpg" >
+          <img  src="..\assets\icon\restaurante-universitario.jpg" />
         </ion-col>
-        <ion-col class="card-content">
+        <ion-col class="card-content" size="7">
           <ion-row>
               <ion-card-title>Restaurante Universitário</ion-card-title>
+              <div class="border-div"></div>
           </ion-row>
-          <ion-row>
+          <ion-row class="card-content-info">
               <ion-col>
-                <ion-row>20</ion-row>
+                <ion-row class="card-number"><strong>20</strong></ion-row>
                 <ion-row class="card-label">Publicações</ion-row>
               </ion-col>
               <ion-col>
-                <ion-row>1k</ion-row>
+                <ion-row class="card-number"><strong>1k</strong></ion-row>
                 <ion-row class="card-label">Inscritos</ion-row>
               </ion-col>
           </ion-row>
           <ion-row>
-            <ion-button class="card-button">Desinscrever<ion-icon name="remove" class="card-button-icon"></ion-icon></ion-button>
+            <ion-button color="white" class="card-button">Inscrever<ion-icon name="add" class="card-button-icon"></ion-icon></ion-button>
           </ion-row>
         </ion-col>
       </ion-row>

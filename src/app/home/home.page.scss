@@ -1,20 +1,18 @@
-
 ion-card-title{
   font-size: 12px;
-  border-bottom: 1px solid #008639;
+  //border-bottom: 1px solid #008639;
+}
+
+.border-div{
+  border-top: 1px solid #008639;
+  width: 60%;
 }
 
 ion-searchbar{
   padding-left: 50px;
   padding-right: 50px;
-}
+  height: 30px;
 
-.card-label,.card-button{
-  font-size: 10px;
-}
-
-.card-button-icon{
-  margin-left: 5px;
 }
 
 ion-row,ion-col{
@@ -26,16 +24,55 @@ ion-content,ion-header{
   --ion-background-color: #004B80;
 }
 
-.card-container{
-  padding:0px;
-  background-color: white;
-}
-
 .ion-padding{
   padding-left:5px !important;
   padding-right: 5px!important;
 }
 
+.card-container{
+  padding:0px;
+  background-color: white;
+}
+
+.card-img{
+  max-height: 130px;
+}
+
 .card-content{
   margin: auto;
+}
+
+.card-label{
+  font-size: 10px;
+}
+
+.card-number{
+  font-size:16px;
+}
+
+.card-content-info{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.card-button-icon{
+  margin-left: 5px;
+}
+
+.card-button{
+  background-color: white;
+  color: #008639;
+  border: 1px solid #008639;
+  border-radius: 3px;
+  font-size: 11px;
+  height: 20px;
+}
+
+#fav-icon{
+  font-size: 25px;
+}
+
+#logo{
+  max-height: 25px;
+  padding-top: 10px;
 }
