@@ -10,32 +10,8 @@
 <ion-content>
   <div class="ion-padding" >
     <ion-searchbar placeholder="Buscar Publicador" color="light"></ion-searchbar>
-    <ion-card class="card-container" size="1">
-      <ion-row>
-      <ion-col class="card-img">
-          <img  src="..\assets\icon\restaurante-universitario.jpg" />
-        </ion-col>
-        <ion-col class="card-content" size="7">
-          <ion-row>
-              <ion-card-title>Restaurante Universitário</ion-card-title>
-              <div class="border-div"></div>
-          </ion-row>
-          <ion-row class="card-content-info">
-              <ion-col>
-                <ion-row class="card-number"><strong>20</strong></ion-row>
-                <ion-row class="card-label">Publicações</ion-row>
-              </ion-col>
-              <ion-col>
-                <ion-row class="card-number"><strong>1k</strong></ion-row>
-                <ion-row class="card-label">Inscritos</ion-row>
-              </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-button color="white" class="card-button">Inscrever<ion-icon name="add" class="card-button-icon"></ion-icon></ion-button>
-          </ion-row>
-        </ion-col>
-      </ion-row>
-    </ion-card>
-
+    <div *ngFor="let noticia of noticias">
+    <app-card [titulo]="noticia.titulo" [nInscritos]="noticia.nInscritos" [nPublicacoes]="noticia.nPublicacoes"></app-card>
+    </div>
   </div>
 </ion-content>

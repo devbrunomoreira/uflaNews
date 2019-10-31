@@ -7,6 +7,18 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  noticias = [{
+    titulo: 'Restaurante Universitário',
+    nPublicacoes: 1,
+    nInscritos: 2
+  },
+    {
+      titulo: 'PRG UFLA',
+      nPublicacoes: 2,
+      nInscritos: 3
+    }];
+
+  constructor() {
+  }
 
 }

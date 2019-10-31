@@ -1,0 +1,26 @@
+<ion-card class="card-container" size="1">
+  <ion-row>
+  <ion-col class="card-img">
+      <img  src="..\assets\icon\restaurante-universitario.jpg" />
+    </ion-col>
+    <ion-col class="card-content" size="7">
+      <ion-row>
+          <ion-card-title>{{titulo}}</ion-card-title>
+      </ion-row>
+      <ion-row><div class="border-div"></div></ion-row>
+      <ion-row class="card-content-info">
+          <ion-col>
+            <ion-row class="card-number"><strong>{{nPublicacoes}}</strong></ion-row>
+            <ion-row class="card-label">Publicações</ion-row>
+          </ion-col>
+          <ion-col>
+            <ion-row class="card-number"><strong>{{nInscritos}}</strong></ion-row>
+            <ion-row class="card-label">Inscritos</ion-row>
+          </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-button color="white" (click)="clickInscreverButton()" class="card-button" id="cd-button-{{id}}">{{acao}}<ion-icon name="{{icon}}" class="card-button-icon"></ion-icon></ion-button>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+</ion-card>
