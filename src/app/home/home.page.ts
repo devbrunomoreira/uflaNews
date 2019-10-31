@@ -7,6 +7,18 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  noticias = [{
+    titulo: 'Teste',
+    nPublicacoes: 1,
+    nInscritos: 2
+  },
+    {
+      titulo: 'Teste2',
+      nPublicacoes: 2,
+      nInscritos: 3
+    }];
+
+  constructor() {
+  }
 
 }

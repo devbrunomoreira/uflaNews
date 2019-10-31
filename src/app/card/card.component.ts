@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-card',
@@ -7,8 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardComponent implements OnInit {
 
+  @Input() titulo: string;
+  @Input() nInscritos: string;
+  @Input() nPublicacoes: string;
+
+  acao = 'Desinscrever';
+
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
+
+  clickInscreverButton = () => {
+    if (this.acao === 'Desinscrever') {
+      this.acao = 'Inscrever';
+    } else {
+      this.acao = 'Desinscrever';
+    }
+  }
 
 }
