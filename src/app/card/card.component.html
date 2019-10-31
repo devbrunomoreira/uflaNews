@@ -1,7 +1,7 @@
 <ion-card class="card-container" size="1">
   <ion-row>
-  <ion-col class="card-img">
-      <img  src="..\assets\icon\restaurante-universitario.jpg" />
+    <ion-col class="card-img">
+      <img  src="{{image}}" />
     </ion-col>
     <ion-col class="card-content" size="7">
       <ion-row>
@@ -19,7 +19,7 @@
           </ion-col>
       </ion-row>
       <ion-row>
-        <ion-button color="white" (click)="clickInscreverButton()" class="card-button" id="cd-button-{{id}}">{{acao}}<ion-icon name="{{icon}}" class="card-button-icon"></ion-icon></ion-button>
+        <ion-button color="white" (click)="clickInscreverButton()" class="card-button" id="card-button-{{id}}" >{{acao}}<ion-icon name="{{icon}}" class="card-button-icon"></ion-icon></ion-button>
       </ion-row>
     </ion-col>
   </ion-row>
