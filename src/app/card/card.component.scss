@@ -1,0 +1,53 @@
+
+.card-img{
+  margin: 0 !important;
+  padding: 0 !important;
+
+  .img{
+    background-size: cover;
+    height: 100%;
+    background-image: url("https://image.freepik.com/fotos-gratis/formas-geometricas-dentro-da-cavidade-quadrada-oca_105589-527.jpg");
+  }
+}
+
+.card-container{
+  padding:0px;
+  text-align: center;
+  background-color: white;
+
+  .card-value{
+    font-size: 16px;
+    font-weight: 500;
+    color: black;
+  }
+
+
+  .card-label,.card-button{
+    font-size: 10px;
+  }
+
+  .card-button-icon{
+    margin-left: 5px;
+  }
+
+  .card-title{
+    font-size: 16px;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .card-button{
+    width: fit-content;
+    margin: 0 auto;
+    background-color: transparent;
+    color: green;
+
+    border: 2px solid green;
+    border-radius: 5px;
+  }
+
+  .card-value, .card-label{
+    text-align: center;
+    display: block;
+  }
+}
