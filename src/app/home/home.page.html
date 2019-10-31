@@ -1,14 +1,40 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      UFLANews
     </ion-title>
+    <ion-icon name="person" slot="end"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+  <div class="ion-padding" >
+    <ion-searchbar placeholder="Buscar Publicador" color="light"></ion-searchbar>
+    <ion-card class="card-container">
+      <ion-row>
+      <ion-col class="card-img">
+          <img  src="https://image.freepik.com/fotos-gratis/formas-geometricas-dentro-da-cavidade-quadrada-oca_105589-527.jpg" >
+        </ion-col>
+        <ion-col class="card-content">
+          <ion-row>
+              <ion-card-title>Restaurante Universitário</ion-card-title>
+          </ion-row>
+          <ion-row>
+              <ion-col>
+                <ion-row>20</ion-row>
+                <ion-row class="card-label">Publicações</ion-row>
+              </ion-col>
+              <ion-col>
+                <ion-row>1k</ion-row>
+                <ion-row class="card-label">Inscritos</ion-row>
+              </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-button class="card-button">Desinscrever<ion-icon name="remove" class="card-button-icon"></ion-icon></ion-button>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
   </div>
 </ion-content>
