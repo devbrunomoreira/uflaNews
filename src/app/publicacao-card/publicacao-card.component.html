@@ -1,0 +1,10 @@
+
+<ion-card id="img-publicacao-{{id}}" class="img-publicacao" [style.backgroundImage]="'url(' + img_url + ')'">
+  <div id="img-mascara">
+    <ion-grid>
+      <ion-row id="post-title"><strong>{{titulo}}</strong></ion-row>
+      <ion-row class="post-info"><ion-icon name="time" class="pre-icon"></ion-icon>{{data}}</ion-row>
+      <ion-row class="post-info"><ion-icon name="thumbs-up" class="pre-icon"></ion-icon>{{likes}}</ion-row>
+    </ion-grid>
+  </div>
+</ion-card>

@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-icon id="fav-icon" name="arrow-back" slot="start"></ion-icon>
+      <ion-title>
+        <img id="logo" src="../assets/icon/logo.png"/>
+      </ion-title>
+      <ion-icon id="fav-icon" name="person" slot="end"></ion-icon>
+    </ion-toolbar>
+  </ion-header>
+</ion-header>
+
+<ion-content>
+  <app-publicador-header [titulo]="publicador.titulo" [nInscritos]="publicador.nInscritos"></app-publicador-header>
+
+  <div *ngFor="let noticia of noticias">
+    <app-publicacao-card [id]="noticia.id" [titulo]="noticia.titulo" [data]="noticia.data | date:'yyyy-MM-dd - HH:mm'" [img_url]="noticia.img_url" [likes]="noticia.likes | number"></app-publicacao-card>
+  </div>
+
+</ion-content>

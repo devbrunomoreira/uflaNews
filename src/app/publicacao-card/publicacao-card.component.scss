@@ -1,0 +1,42 @@
+.img-publicacao{
+  background-color: #cccccc;
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size: cover;
+  height: 200px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+#img-mascara{
+  background-image: url("../../assets/icon/mascara.png");
+  background-color: transparent;
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size: cover;
+  height: 200px;
+}
+
+ion-row{
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+ion-grid{
+  padding-top: 120px;
+}
+
+#post-title{
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.post-info{
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.pre-icon{
+  margin-right: 5px;
+}
