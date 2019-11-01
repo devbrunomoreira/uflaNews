@@ -1,0 +1,53 @@
+ion-row{
+  justify-content: center;
+}
+
+ion-grid{
+  padding-top: 160px;
+}
+
+.border-div{
+  border-top: 1px solid #008639;
+  width: 50%;
+}
+
+#img-publicador{
+  background-image: url("../../assets/icon/restaurante-universitario.jpg");
+  background-color: #cccccc;
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size: cover;
+  height: 240px;
+}
+
+#img-mascara{
+  background-image: url("../../assets/icon/mascara.png");
+  background-color: transparent;
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size: cover;
+  height: 240px;
+}
+
+#publicador-title{
+  color: white;
+  font-size: 20px;
+}
+
+#numero-inscritos{
+  color: white;
+  font-size: 15px;
+  justify-content: flex-start;
+}
+
+#inscrever-desinscrever{
+  justify-content: flex-end;
+}
+
+#info-publicador{
+  padding-top: 15px;
+}
+
+#img-icon{
+  height: 25px;
+}

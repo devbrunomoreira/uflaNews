@@ -1,0 +1,20 @@
+<div id="img-publicador" >
+  <div id="img-mascara">
+    <ion-grid>
+      <ion-row id="publicador-title">{{titulo}}</ion-row>
+      <ion-row>
+        <div class="border-div">
+        </div>
+      </ion-row>
+      <ion-row id="info-publicador">
+        <ion-col id="numero-inscritos">{{nInscritos}} Inscritos</ion-col>
+        <ion-col >
+          <ion-row id="inscrever-desinscrever">
+            <!--<ion-icon name="add-circle-outline"></ion-icon>-->
+            <img id="img-icon" [src]="icon" (click)="clickInscreverButton()"/>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</div>
