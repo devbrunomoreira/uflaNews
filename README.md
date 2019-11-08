@@ -7,8 +7,18 @@ Utilizaremos Flutter para o desenvolvimento do aplicativo.
 
 Motivações: Muitas vezes as notícias geradas pelas entidades da UFLA não chegam ao seu público alvo. Com o aplicativo, os usuários poderão assinar o feed das entidades que consideram interessantes, e receberão notificações push sobre novidades publicadas.
 
+# Manual de instalação
+ - clonar o repositório
+ - rodar o comando 
+ > npm install -g ionic cordova json-server
+ - entrar na pasta do projeto
+ - num terminal, rodar o comando
+ > json-server --watch db.json
+ - em outro terminal, rodar o comando
+ > ionic serve
 
-Participantes: 
+# Participantes
+
 Bruno Jahel - Hard skills: Dev Frontend(Vue.js) - Soft skills: Comunicação
 Bruno Moreira
 Guilherme Teixera
