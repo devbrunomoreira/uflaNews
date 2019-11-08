@@ -1,0 +1,15 @@
+<ion-card id="comment-card" *ngFor="let comment of comments">
+  <ion-row id="comment-content">
+    <ion-col>
+      {{comment.content}}
+    </ion-col>
+  </ion-row>
+  <ion-row id="comment-info">
+    <ion-col>
+      <ion-icon class="pre-icon" name="person"></ion-icon>{{comment.user}}
+    </ion-col>
+    <ion-col>
+      <ion-icon class="pre-icon" name="time" ></ion-icon>{{comment.date}}
+    </ion-col>
+  </ion-row>
+</ion-card>

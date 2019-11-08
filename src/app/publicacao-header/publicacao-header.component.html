@@ -1,0 +1,16 @@
+<div id="img-publicacao" >
+  <div id="img-mascara">
+    <ion-grid>
+      <ion-row id="publicacao-title"><ion-col>{{titulo}}</ion-col></ion-row>
+      <ion-row id="info-data-publicacao"><ion-col><ion-icon name="time" class="pre-icon"></ion-icon>{{data}}</ion-col></ion-row>
+      <ion-row id="info-likes-publicacao">
+        <ion-col id="numero-likes"><ion-icon name="thumbs-up" class="pre-icon"></ion-icon>{{likes}} likes</ion-col>
+        <ion-col >
+          <ion-row id="curtir-descurtir">
+            <img id="img-icon" [src]="icon" (click)="clickCurtirButton()"/>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</div>
