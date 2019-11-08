@@ -4,14 +4,14 @@
         {
             "id": 0,
             "titulo": "Restaurante Universitário",
-            "nPublicacoes": 1,
+            "publicacoes": [0,1],
             "nInscritos": 2,
             "image": "../assets/icon/restaurante-universitario.jpg"
         },
         {
             "id": 1,
             "titulo": "PRG UFLA",
-            "nPublicacoes": 2,
+            "publicacoes": [2],
             "nInscritos": 3,
             "image": "https://img.elo7.com.br/product/zoom/13F22D3/2-bases-quadradas-com-velas-quadradas-castical-pequeno.jpg"
         }
@@ -23,14 +23,14 @@
             "nome": "Bruno Jahel",
             "email": "brunojahel@gmail.com",
             "likes": [0,1,2],
-            "favs": [1,2]
+            "publicadoresInscritos": [1,2]
         },
         {
             "id": 1,
             "nome": "Guilherme Teixeira",
             "email": "guiiteixeira@gmail.com",
             "likes": [2],
-            "favs": []
+            "publicadoresInscritos": [0,1,2]
         }
     ],
 
@@ -40,15 +40,75 @@
             "titulo": "Bife de Chorizo agora no RU!",
             "data": "2019-09-15T20:42",
             "img_url": "https://public-v2links.adobecc.com/cb1de58f-2bd2-4946-5068-db069a1a9483/component?params=component_id:66f9b968-0757-4ed6-9dc9-63b8fe8420eb&params=version:0&token=1572719278_da39a3ee_a1316116348c58b746363ec925a112e9ffac4913&api_key=CometServer1",
-            "likes": 624
+            "likes": 624,
+            "secoes": [
+                {
+                    "titulo": "Cardápio de hoje",
+                    "descricao": "No cardápio de hoje, teremos bife de chorizo, recomendado por 9 a cada 10 nutricionistas na cidade de lavras"
+                },
+                {
+                    "titulo": "Seção 2",
+                    "descricao": "Lorem ipsum, dolor sit amet."
+                }
+            ]
           },
           {
             "id": 1,
             "titulo": "Lula solto, visita RU da UFLA!",
             "data": "2019-10-15T12:30",
             "img_url": "https://www.dm.com.br/wp-content/uploads/2019/05/ZnHn4dgf_400x400.jpg",
-            "likes": 12345
+            "likes": 12345,
+            "secoes": [
+                {
+                    "titulo": "Dia festivo no RU",
+                    "descricao": "Manifestantes fizeram corrente de oração na porta do RU hoje, e estão sendo processados pelo governo federal"
+                },
+                {
+                    "titulo": "Essa seção possui um Mussum Ipsum",
+                    "descricao": "Mussum Ipsum, cacilds vidis litro abertis. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi. Leite de capivaris, leite de mula manquis sem cabeça. Aenean aliquam molestie leo, vitae iaculis nisl. Copo furadis é disculpa de bebadis, arcu quam euismod magna."
+                }
+            ]
+          },
+          {
+            "id": 2,
+            "titulo": "Lula solto, visita RU da UFLA!",
+            "data": "2019-10-15T12:30",
+            "img_url": "https://www.dm.com.br/wp-content/uploads/2019/05/ZnHn4dgf_400x400.jpg",
+            "likes": 554321,
+            "secoes": [
+                {
+                    "titulo": "Seção do pokemon ipsum",
+                    "descricao": "Pokem ipsum dolor sit amet Yanmega Lugia Patrat Simisear Elgyem Storm Badge. Squirtle Fraxure Cryogonal Pidove Squirtle Krabby James. Leech Seed Misdreavus Marshtomp Muk Pachirisu Scrafty to train them is my cause. Electric Forretress Dodrio Grovyle Volcano Badge Red Druddigon. Ground Zoroark Seel Anorith incididunt ut labore Cerulean City Starly."
+                },
+                {
+                    "titulo": "Compadre Washingtom ipsum",
+                    "descricao": "Eiiitaaa Mainhaaa!! Esse Lorem ipsum é só na sacanageeem!! E que abundância meu irmão viuu!! Assim você vai matar o papai. Só digo uma coisa, Domingo ela não vai! Danadaa!! Vem minha odalisca, agora faz essa cobra coral subir!!! Pau que nasce torto, Nunca se endireita. Tchannn!! Tchannn!! Tu du du pááá! Eu gostchu muitchu, heinn! danadinha! Mainhaa! Agora use meu lorem ipsum ordinária!!! Olha o quibeee! rema, rema, ordinária!"
+                }
+            ]
           }
+    ],
 
+    "comentarios": [
+        {
+            "id": 0,
+            "idPublicacao": 0,
+            "idUsuario": 1,
+            "comentario": "Gostei muito da publicação, vou continuar seguindo para ver sempre as noticias",
+            "timestamp": "20/12/2012 - 12:12"
+        },
+        {
+            "id": 1,
+            "idPublicacao": 0,
+            "idUsuario": 2,
+            "comentario": "Concordo, também vou continuar seguindo, gostei do cardápio de hoje",
+            "timestamp": "20/12/2012 - 12:35"
+        },
+        {
+            "id": 2,
+            "idPublicacao": 0,
+            "idUsuario": 3,
+            "comentario": "Não gosto de chorizo, prefiro bife à rolê",
+            "timestamp": "20/12/2012 - 15:25"
+        }
     ]
 }
