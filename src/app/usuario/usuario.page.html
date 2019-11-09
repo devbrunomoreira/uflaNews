@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-icon id="fav-icon" name="arrow-back" slot="start"></ion-icon>
+      <ion-title>
+        <img id="logo" src="../assets/icon/logo.png"/>
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+</ion-header>
+
+<ion-content>
+
+  <ion-row class="first-row">
+    <ion-col size="4">
+      <div id="img-perfil">
+
+      </div>
+    </ion-col>
+    <ion-col >
+      <ion-row class="first-row">
+        {{usuario.nome}}
+      </ion-row>
+      <ion-row>
+          {{usuario.identificacao}}
+      </ion-row>
+      <ion-row>
+          {{usuario.email}}
+      </ion-row>
+    </ion-col>
+  </ion-row>
+
+  <div *ngFor="let publicador of publicadores">
+    <app-card [titulo]="publicador.titulo" [nInscritos]="publicador.nInscritos" [nPublicacoes]="publicador.nPublicacoes" [image]="publicador.image" [id]="publicador.id"></app-card>
+  </div>
+
+</ion-content>
