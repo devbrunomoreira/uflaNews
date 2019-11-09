@@ -1,5 +1,5 @@
 import { Component,Input, OnInit } from '@angular/core';
-import {Sessao} from "../../model/sessao";
+import { SecaoModel } from "../models/secao.model";
 
 @Component({
   selector: 'app-publicacao-content-card',
@@ -8,7 +8,7 @@ import {Sessao} from "../../model/sessao";
 })
 export class PublicacaoContentCardComponent implements OnInit {
 
-  @Input() sessoes: Sessao[];
+  @Input() secoes: SecaoModel[];
 
   constructor() { }
 
