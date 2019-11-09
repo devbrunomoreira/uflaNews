@@ -2,7 +2,7 @@
   <div id="publicacao-session" *ngFor="let sessao of sessoes">
     <ion-row class="session-title">
       <ion-col size="1">
-        <img src="../../assets/icon/item-icon.png" id="img-icon">
+        <img [src]="sessao.icon" id="img-icon">
       </ion-col>
       <ion-col size="11">
         <strong>
