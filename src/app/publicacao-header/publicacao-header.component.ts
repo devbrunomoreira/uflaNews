@@ -8,8 +8,9 @@ import { Component,Input, OnInit } from '@angular/core';
 export class PublicacaoHeaderComponent implements OnInit {
 
   @Input() titulo : string;
-  @Input() data : string;
+  @Input() data : Date;
   @Input() likes : number;
+  @Input() img_url : string;
 
   icon = "../../assets/icon/curtir-icon.png";
 
