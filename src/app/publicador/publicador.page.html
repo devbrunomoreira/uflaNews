@@ -14,7 +14,7 @@
   <app-publicador-header [titulo]="publicador.titulo" [nInscritos]="publicador.nInscritos"></app-publicador-header>
 
   <div *ngFor="let noticia of noticias">
-    <app-publicacao-card [id]="noticia.id" [titulo]="noticia.titulo" [data]="noticia.data | date:'yyyy-MM-dd - HH:mm'" [img_url]="noticia.img_url" [likes]="noticia.likes | number"></app-publicacao-card>
+    <app-publicacao-card [id]="noticia.id" [titulo]="noticia.titulo" [data]="noticia.data | date:'dd/MM/yyyy - HH:mm'" [img_url]="noticia.img_url" [likes]="noticia.likes | number"></app-publicacao-card>
   </div>
 
 </ion-content>

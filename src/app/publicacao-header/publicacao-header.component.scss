@@ -1,0 +1,48 @@
+ion-grid{
+  padding-top: 140px;
+}
+
+ion-row{
+  color: white;
+}
+
+#img-publicacao{
+  background-image: url("https://img.stpu.com.br/?img=https://s3.amazonaws.com/pu-mgr/default/a0R0f00000z3uDjEAI/5d4de764e4b014f1a28f7021.jpg&w=710&h=462");
+  background-color: #cccccc;
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size: cover;
+  height: 240px;
+}
+
+#img-mascara{
+  background-image: url("../../assets/icon/mascara.png");
+  background-color: transparent;
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size: cover;
+  height: 240px;
+}
+
+#publicacao-title{
+  color: white;
+  font-size: 20px;
+}
+
+#numero-likes, #info-data-publicacao{
+  color: white;
+  font-size: 12px;
+  justify-content: flex-start;
+}
+
+#curtir-descurtir{
+  justify-content: flex-end;
+}
+
+#img-icon{
+  height: 25px;
+}
+
+.pre-icon{
+  margin-right: 5px;
+}
