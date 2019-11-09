@@ -1,0 +1,45 @@
+
+//https://lula.com.br/wp-content/uploads/2018/09/lula-livre-vermelho-300x300.png
+
+ion-content,ion-header{
+  --ion-background-color: #004B80;
+}
+
+.ion-padding{
+  padding: 0px!important;
+}
+
+#fav-icon{
+  font-size: 25px;
+}
+
+#logo{
+  max-height: 25px;
+  padding-top: 10px;
+}
+
+#img-perfil{
+  background-image: url("../../assets/icon/avatar.png");
+  background-color: #004B80s;
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  height: 140px;
+  width: 140px;
+}
+
+.first-row{
+  margin-top: 35px;
+}
+
+ion-col{
+  margin: 10px;
+  font-size: 14px;
+  color: white;
+}
+
+ion-row{
+  justify-content: center;
+  margin-top:10px;
+}

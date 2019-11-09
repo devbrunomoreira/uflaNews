@@ -1,0 +1,75 @@
+ion-content{
+  --ion-background-color: #e8e8e8;
+}
+
+ion-row{
+  justify-content: center;
+  margin: 10px;
+}
+
+input{
+  border: 1px solid #004b80;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 15px;
+  width: 300px;
+  height: 30px;
+}
+
+.container{
+  padding: 20px;
+}
+
+#footer-holder{
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+#logo-ufla{
+  display: block;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#logo-app{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width:200px;
+  margin-top: 50px;
+}
+
+#avatar{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90px;
+}
+
+#btn-cadastrar{
+  background-color: white;
+  color: #008639;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #008639;
+  border-radius: 5px;
+  font-size: 15px;
+  width: 125px;
+  height: 30px;
+}
+
+#btn-cancelar{
+  background-color: white;
+  color: #ee6611;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #ee6611;
+  border-radius: 5px;
+  font-size: 15px;
+  width: 125px;
+  height: 30px;
+}
