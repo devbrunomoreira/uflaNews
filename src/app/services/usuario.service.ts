@@ -9,7 +9,7 @@ const API_URL: string = "http://localhost:3000";
 @Injectable({
     providedIn: 'root'
 })
-export class UserService {
+export class UsuarioService {
 
     constructor(
         public http: HttpClient, public authService: AuthService) { }
@@ -29,11 +29,28 @@ export class UserService {
     async getUserByEmail(email: string) {
         const options = await this.getHttpOptions();
 
-        return this.http.get(`${API_URL}/users?email=${email}`, options).pipe(
+        return this.http.get(`${API_URL}/usuarios?email=${email}`, options).pipe(
             map(
                 (users: UsuarioModel[]) => {
                     const user = users[0];
                     return (users.length == 0) ? null : new UsuarioModel(user.id, user.nome, user.email, user.likes, user.publicadoresIncritos);
+                }
+            )
+        ).toPromise();
+    }
+
+    async getUserById(id: number) {
+        const options = await this.getHttpOptions();
+        return this.http.get(`${API_URL}/usuarios/${id}`, options).pipe(
+            map(
+                (user: UsuarioModel) => {
+                    return new UsuarioModel(
+                        user.id,
+                        user.nome,
+                        user.email,
+                        user.likes,
+                        user.publicadoresIncritos
+                    )
                 }
             )
         ).toPromise();
@@ -46,6 +63,6 @@ export class UserService {
             })
         };
 
-        return this.http.post(`${API_URL}/users`, user, options).toPromise();
+        return this.http.post(`${API_URL}/usuarios`, user, options).toPromise();
     }
 }
