@@ -1,10 +1,10 @@
 <ion-card class="card-container" size="1">
   <ion-row>
-    <ion-col class="card-img">
+    <ion-col class="card-img" [routerLink]="['/publicador/'] + id">
       <img  height="140px" src="{{image}}" />
     </ion-col>
     <ion-col class="card-content" size="7">
-      <ion-row>
+      <ion-row [routerLink]="['/publicador/'] + id">
           <ion-card-title>{{titulo}}</ion-card-title>
       </ion-row>
       <ion-row><div class="border-div"></div></ion-row>
