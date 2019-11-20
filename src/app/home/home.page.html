@@ -11,7 +11,7 @@
   <div class="ion-padding" >
     <ion-searchbar placeholder="Buscar Publicador" color="light"></ion-searchbar>
     <div *ngFor="let publicador of listaDePublicadores">
-    <app-card [titulo]="publicador.titulo" [nInscritos]="publicador.nInscritos" [nPublicacoes]="publicador.publicacoes.length" [image]="publicador.image" [id]="publicador.id"></app-card>
+    <app-card [routerLink]="['/publicador/'] + publicador.id" [titulo]="publicador.titulo" [nInscritos]="publicador.nInscritos" [nPublicacoes]="publicador.publicacoes.length" [image]="publicador.image" [id]="publicador.id"></app-card>
     </div>
   </div>
 </ion-content>
