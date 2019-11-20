@@ -9,7 +9,7 @@ export class PublicadorHeaderComponent implements OnInit {
 
   @Input() titulo: string;
   @Input() nInscritos: string;
-
+  @Input() image: string;
   icon = "../../assets/icon/inscrever-icon.png";
 
   constructor() { }
