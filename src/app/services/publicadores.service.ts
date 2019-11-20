@@ -48,4 +48,22 @@ export class PublicadoresService {
             )
         ).toPromise();
     }
+
+    async getById(id: number): Promise<PublicadoresModel> {
+        const options = await this.getHttpOptions();
+
+        return this.http.get(`${API_URL}/publicadores/${id}`, options).pipe(
+            map(
+                (item: PublicadoresModel) => {
+                    return new PublicadoresModel(
+                        item.id,
+                        item.titulo,
+                        item.publicacoes,
+                        item.nInscritos,
+                        item.image
+                    );
+                }
+            )
+        ).toPromise();
+    }
 }
