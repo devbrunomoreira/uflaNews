@@ -4,7 +4,7 @@
         {
             "id": 0,
             "titulo": "Restaurante Universitário",
-            "publicacoes": [0,1],
+            "publicacoes": [0, 1],
             "nInscritos": 2,
             "image": "../assets/icon/restaurante-universitario.jpg"
         },
@@ -55,26 +55,26 @@
                 }
             ]
           },
-          {
+        {
             "id": 1,
             "idPublicador": 0,
-            "titulo": "Lula solto, visita RU da UFLA!",
-            "data": "2019-10-15T12:30",
-            "img_url": "https://www.dm.com.br/wp-content/uploads/2019/05/ZnHn4dgf_400x400.jpg",
-            "likes": 12345,
+            "titulo": "Bife de Chorizo vai chegar no RU!",
+            "data": "2019-09-15T20:42",
+            "img_url": "http://salegrillchurrascaria.com.br/blog/wp-content/uploads/2017/07/102005-bife-de-chorizo-e-chourico-tire-suas-duvidas-e-entenda-de-vez-a-diferenca-1000x640.jpg",
+            "likes": 245,
             "secoes": [
                 {
-                    "titulo": "Dia festivo no RU",
-                    "descricao": "Manifestantes fizeram corrente de oração na porta do RU hoje, e estão sendo processados pelo governo federal",
+                    "titulo": "Cardápio de hoje",
+                    "descricao": "No cardápio de hoje, teremos bife de chorizo, recomendado por 9 a cada 10 nutricionistas na cidade de lavras",
                     "icon": "https://cdn.onlinewebfonts.com/svg/img_174839.png"
                 },
                 {
-                    "titulo": "Essa seção possui um Mussum Ipsum",
-                    "descricao": "Mussum Ipsum, cacilds vidis litro abertis. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi. Leite de capivaris, leite de mula manquis sem cabeça. Aenean aliquam molestie leo, vitae iaculis nisl. Copo furadis é disculpa de bebadis, arcu quam euismod magna.",
+                    "titulo": "Seção 2",
+                    "descricao": "Lorem ipsum, dolor sit amet.",
                     "icon": "https://cdn.onlinewebfonts.com/svg/img_174839.png"
                 }
             ]
-          },
+        },
           {
             "id": 2,
             "idPublicador": 1,
