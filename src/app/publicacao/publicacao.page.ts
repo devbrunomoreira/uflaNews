@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PublicacaoModel } from '../models/publicacao.model';
 import { PublicacaoService } from '../services/publicacao.service';
+import { ComentarioModel } from "../models/comentario.model";
+import { ComentarioService } from '../services/comentarios.service';
+import { UsuarioService } from "../services/usuario.service"
+
 
 @Component({
   selector: 'app-publicacao',
@@ -30,29 +34,15 @@ export class PublicacaoPage implements OnInit {
         icon: "https://cdn.onlinewebfonts.com/svg/img_174839.png"
       }
     ],
-    // comments: [
-    //   {
-    //     user: "Fulano da Silva",
-    //     userId: 0,
-    //     date: "2019-09-15T20:42",
-    //     content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-    //   },
-    //   {
-    //     user: "Fulano da Silva",
-    //     userId: 0,
-    //     date: "2019-09-15T20:42",
-    //     content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-    //   }
-    // ]
-  }
+  };
+  public comentarios: ComentarioModel[];
 
-  constructor(public publicacaoService: PublicacaoService, public activatedRoute: ActivatedRoute) { }
+  constructor(public publicacaoService: PublicacaoService, public comentarioService: ComentarioService, public usuarioService: UsuarioService, public activatedRoute: ActivatedRoute) { }
 
   async ngOnInit() {
     this.id = parseInt(this.activatedRoute.snapshot.paramMap.get('id'));
     this.publicacao = await this.publicacaoService.getById(this.id);
-    console.log(this.publicacao);
-    
+    this.comentarios = await this.comentarioService.getAll(this.publicacao.id);    
   }
 
 }
