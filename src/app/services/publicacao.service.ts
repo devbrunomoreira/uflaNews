@@ -46,4 +46,28 @@ export class PublicacaoService {
             )
         ).toPromise();
     }
+
+    async getByPublisherId(id: number): Promise<PublicacaoModel[]> {
+        const options = await this.getHttpOptions();
+
+        return this.http.get(`${API_URL}/publicacao?idPublicador=${id}`, options).pipe(
+            map(
+                (itens: PublicacaoModel[]) => {
+                    return itens.map(
+                        (item: PublicacaoModel) => {
+                            return new PublicacaoModel(
+                                item.id,
+                                item.idPublicador,
+                                item.titulo,
+                                item.data,
+                                item.img_url,
+                                item.likes,
+                                item.secoes,
+                            );
+                        }
+                    )
+                }
+            )
+        ).toPromise();
+    }
 }
