@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 import { PublicadoresModel } from "../models/publicadores.model";
 import { PublicadoresService } from "../services/publicadores.service";
 import { PublicacaoModel } from "../models/publicacao.model";
@@ -26,7 +27,7 @@ export class PublicadorPage implements OnInit {
 
   public noticias: PublicacaoModel[];
 
-  constructor(public publicadoresService: PublicadoresService, public publicacaoService: PublicacaoService, public activatedRoute: ActivatedRoute) { }
+  constructor(public publicadoresService: PublicadoresService, public publicacaoService: PublicacaoService, public activatedRoute: ActivatedRoute, private _location: Location) { }
 
   async ngOnInit() {
     this.id = parseInt(this.activatedRoute.snapshot.paramMap.get('id'));
