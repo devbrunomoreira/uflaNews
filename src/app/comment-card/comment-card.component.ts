@@ -1,4 +1,5 @@
 import { Component,Input, OnInit } from '@angular/core';
+import { ComentarioModel } from "../models/comentario.model";
 
 @Component({
   selector: 'app-comment-card',
@@ -7,10 +8,9 @@ import { Component,Input, OnInit } from '@angular/core';
 })
 export class CommentCardComponent implements OnInit {
 
-  @Input() comments: Comment[];
-
+  @Input() comments: ComentarioModel[];
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
 }
