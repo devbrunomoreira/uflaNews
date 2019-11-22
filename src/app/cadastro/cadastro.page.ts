@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {AuthService} from '../services/auth.service';
+import {Router} from '@angular/router';
 
 @Component({
 	selector: 'app-cadastro',
@@ -14,7 +15,8 @@ export class CadastroPage implements OnInit {
 	 nome: string;
 	 confirmacaoSenha: string;
 
-	constructor(public authService: AuthService) {
+	constructor(public authService: AuthService,
+	            public router: Router) {
 	}
 
 	ngOnInit() {
@@ -22,7 +24,10 @@ export class CadastroPage implements OnInit {
 
 	async registrar() {
 		if (this.senha === this.confirmacaoSenha) {
-			await this.authService.register(this.email, this.senha, this.matricula, this.nome);
+			const token = await this.authService.register(this.email, this.senha, this.matricula, this.nome);
+			if (token) {
+				await this.router.navigate(['login']);
+			}
 		}
 	}
 }
