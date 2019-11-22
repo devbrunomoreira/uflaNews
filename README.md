@@ -12,8 +12,9 @@ Motivações: Muitas vezes as notícias geradas pelas entidades da UFLA não che
  - rodar o comando 
  > npm install -g ionic cordova json-server
  - entrar na pasta do projeto
- - num terminal, rodar o comando
- > json-server --watch db.json --port 3000
+ - num terminal, rodar os comandos
+ > cd api
+ > npm run start-auth
  - em outro terminal, rodar o comando
  > ionic serve
 
