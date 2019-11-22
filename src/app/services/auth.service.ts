@@ -3,12 +3,12 @@ import { BehaviorSubject } from 'rxjs';
 import { Platform } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 import { HttpClient } from '@angular/common/http';
-import { map } from "rxjs/operators";
+import { map } from 'rxjs/operators';
 
 const TOKEN_KEY = 'auth-token';
 const EMAIL_KEY = 'auth-userid';
 
-const API_URL: string = "http://localhost:3000";
+const API_URL = 'http://localhost:8000';
 
 @Injectable({
     providedIn: 'root'
@@ -36,9 +36,9 @@ export class AuthService {
 
     async login(email: string, password: string) {
         const data = {
-            "email": email,
-            "password": password
-        }
+            email,
+            password
+        };
 
         const token = await this.http.post(`${API_URL}/auth/login`, data).pipe(
             map(
@@ -56,11 +56,14 @@ export class AuthService {
         }
     }
 
-    async register(email: string, password: string) {
+    async register(email: string, password: string, nome: string, matricula: string) {
         const data = {
-            "email": email,
-            "password": password
-        }
+            email,
+            password,
+            nome,
+            matricula
+        };
+        console.log(data);
         return this.http.post(`${API_URL}/auth/register`, data).toPromise();
     }
 
@@ -79,6 +82,8 @@ export class AuthService {
     }
 
     async getAuthToken() {
+        console.log(TOKEN_KEY);
+        console.log(await this.storage.get(TOKEN_KEY));
         return this.storage.get(TOKEN_KEY);
     }
 }

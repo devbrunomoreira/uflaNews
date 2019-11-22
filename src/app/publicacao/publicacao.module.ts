@@ -9,10 +9,13 @@ import { PublicacaoPage } from './publicacao.page';
 import { PublicacaoHeaderComponent } from '../publicacao-header/publicacao-header.component';
 import { PublicacaoContentCardComponent } from '../publicacao-content-card/publicacao-content-card.component';
 import { CommentCardComponent } from '../comment-card/comment-card.component';
+import {AuthGuard} from "../guards/auth.guards";
 
 const routes: Routes = [
   {
     path: '',
+  canActivate: [AuthGuard],
+
     component: PublicacaoPage
   }
 ];

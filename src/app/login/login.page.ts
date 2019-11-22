@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {PublicadoresService} from '../services/publicadores.service';
+import {AuthService} from '../services/auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +10,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPage implements OnInit {
 
-  constructor() { }
 
-  ngOnInit() {
+  @Input() email: string;
+  @Input() senha: string;
+
+  constructor(
+      public authService: AuthService,
+      public router: Router
+  ) { }
+
+  async ngOnInit() {
+    if (await this.authService.isAuthenticated()) {
+      await this.router.navigate(['/']);
+    } else {
+      await this.router.navigate(['/login']);
+    }
   }
 
+  async login() {
+    await this.authService.login(this.email, this.senha);
+    if (await this.authService.isAuthenticated()) {
+      await this.router.navigate(['/']);
+    } else {
+      await this.router.navigate(['/login']);
+    }
+  }
 }

@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import { PublicadoresModel } from '../models/publicadores.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import { map } from "rxjs/operators";
+import { map } from 'rxjs/operators';
 import { AuthService } from './auth.service';
 
-const API_URL: string = "http://localhost:3000";
+const API_URL = 'http://localhost:8000';
 
 @Injectable({
     providedIn: 'root'
@@ -20,7 +20,7 @@ export class PublicadoresService {
 
         const options = {
             headers: new HttpHeaders({
-                'Authorization': `Bearer ${token}`
+                Authorization: `Bearer ${token}`
             })
         };
 
@@ -28,7 +28,7 @@ export class PublicadoresService {
     }
 
     async getAll(): Promise<PublicadoresModel[]> {
-        const options = await this.getHttpOptions();        
+        const options = await this.getHttpOptions();
 
         return this.http.get(`${API_URL}/publicadores`, options).pipe(
             map(
@@ -43,7 +43,7 @@ export class PublicadoresService {
                                 item.image
                             );
                         }
-                    )
+                    );
                 }
             )
         ).toPromise();

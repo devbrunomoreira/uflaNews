@@ -6,37 +6,35 @@
       <img id="avatar" src="../../assets/icon/avatar-blue.png"/>
   </div>
 
-  <form id="form-cadastro">
     <ion-grid>
       <ion-row>
-        <input type="text" name="nome" placeholder="Digite seu nome">
+          <input type="text" [(ngModel)]="nome" placeholder="Digite seu nome">
       </ion-row>
       <ion-row>
-        <input type="text" name="matricula" placeholder="Digite sua matricula">
+        <input type="text" [(ngModel)]="matricula" placeholder="Digite sua matricula">
       </ion-row>
       <ion-row>
-        <input type="text" name="email" placeholder="Digite seu email">
+        <input type="text" [(ngModel)]="email" placeholder="Digite seu email">
       </ion-row>
       <ion-row>
-        <input type="password" name="senha" placeholder="Crie uma senha">
+        <input type="password" [(ngModel)]="senha" placeholder="Crie uma senha">
       </ion-row>
       <ion-row>
-        <input type="password" name="conf-senha" placeholder="Confirme sua senha">
+        <input type="password" [(ngModel)]="confirmacaoSenha" placeholder="Confirme sua senha">
       </ion-row>
       <ion-row>
         <ion-col>
           <ion-row>
-            <button type="button" name="cancelar" id="btn-cancelar">Cancelar</button>
+            <button type="button" name="cancelar" id="btn-cancelar" [routerLink]="['/login']">Cancelar</button>
           </ion-row>
         </ion-col>
         <ion-col>
           <ion-row>
-            <button type="submit" name="cadastrar" id="btn-cadastrar">Cadastre-se</button>
+            <button name="cadastrar" id="btn-cadastrar" (click)="registrar()">Cadastre-se</button>
           </ion-row>
         </ion-col>
       </ion-row>
     </ion-grid>
-  </form>
 
   <div id="footer-holder">
     <div>

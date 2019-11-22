@@ -8,10 +8,12 @@ import { IonicModule } from '@ionic/angular';
 import { PublicadorPage } from './publicador.page';
 import { PublicadorHeaderComponent } from '../publicador-header/publicador-header.component';
 import { PublicacaoCardComponent } from '../publicacao-card/publicacao-card.component';
+import {AuthGuard} from "../guards/auth.guards";
 
 const routes: Routes = [
   {
     path: '',
+    canActivate: [AuthGuard],
     component: PublicadorPage
   }
 ];

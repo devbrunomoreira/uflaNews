@@ -2,22 +2,20 @@
   <div class="container">
       <img id="logo-app" src="../../assets/icon/logo-blue.png"/>
   </div>
-  <form id="form-cadastro">
     <ion-grid>
       <ion-row>
-        <input type="text" name="email" placeholder="Email">
+        <input type="text" name="email" [(ngModel)]="email" placeholder="Email">
       </ion-row>
       <ion-row>
-        <input type="text" name="senha" placeholder="*********">
+        <input type="password" name="senha" [(ngModel)]="senha" placeholder="*********">
       </ion-row>
       <ion-row>
-        <button type="submit" name="entrar" id="btn-entrar">Entrar</button>
+        <button name="entrar" id="btn-entrar" (click)="login()">Entrar</button>
       </ion-row>
       <ion-row>
-        <a href="#">Cadastre-se</a>
+        <a [routerLink]="['/cadastro/']">Cadastre-se</a>
       </ion-row>
     </ion-grid>
-  </form>
   <div id="footer-holder">
     <div>
       <img id="logo-ufla" src="../../assets/icon/ufla-logo.png"/>
