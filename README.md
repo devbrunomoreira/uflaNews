@@ -13,15 +13,30 @@ Motivações: Muitas vezes as notícias geradas pelas entidades da UFLA não che
  > npm install -g ionic cordova json-server
  - entrar na pasta do projeto
  - num terminal, rodar os comandos
- > cd api
- > npm run start-auth
- - em outro terminal, rodar o comando
+ > npm install
+ 
+ (se necessário, rodar "npm audit fix")
+ 
  > ionic serve
+ 
+ - em outro terminal, rodar o comando
+ > cd api
+ 
+ > npm install
+ 
+ (se necessário, rodar "npm audit fix")
+ 
+ > npm run start-auth
+ 
+ - Acessar a rota no navegador: http://localhost:8100/login
+
+ - Após realizar um cadastro, parar o terminal onde está rodando o comando "npm run start-auth" e rodar novamente (ainda estamos com um problema pois o cadastro só é reconhecido após restart do servidor).
+ - Ao acessar o login após restart no servidor, entra normalmente no sistema
 
 # Participantes
 
-Bruno Jahel - Hard skills: Dev Frontend(Vue.js) - Soft skills: Comunicação
-Bruno Moreira
-Guilherme Teixera
-Gustavo Costa
-Gustavo Reis
+- Bruno Jahel
+- Bruno Moreira
+- Guilherme Teixera
+- Gustavo Costa
+- Gustavo Reis
