@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import { PublicacaoModel } from '../models/publicacao.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import { map } from "rxjs/operators";
+import { map } from 'rxjs/operators';
 import { AuthService } from './auth.service';
 
-const API_URL: string = "http://localhost:8000";
+const API_URL = 'http://localhost:8000';
 
 @Injectable({
     providedIn: 'root'
@@ -20,7 +20,7 @@ export class PublicacaoService {
 
         const options = {
             headers: new HttpHeaders({
-                'Authorization': `Bearer ${token}`
+                Authorization: `Bearer ${token}`
             })
         };
 
@@ -47,6 +47,45 @@ export class PublicacaoService {
         ).toPromise();
     }
 
+
+    async inscrever(id: number): Promise<void> {
+        const options = await this.getHttpOptions();
+
+        const idUsuario = 1; // Id do usuario logado
+
+        this.http.get(`${API_URL}/users/${idUsuario}`, options).toPromise().then((response) => {
+
+            response.likes ? response.likes.indexOf(id) === -1 && response.likes.push(id) : response.likes = [id];
+
+            response = {
+                ...response,
+                likes: response.likes
+            };
+
+            return this.http.put(`${API_URL}/users/${idUsuario}`, response, options).toPromise();
+        });
+
+    }
+
+    async desinscrever(id: number): Promise<void> {
+        const options = await this.getHttpOptions();
+
+        const idUsuario = 1; // Id do usuario logado
+
+        this.http.get(`${API_URL}/users/${idUsuario}`, options).toPromise().then((response) => {
+
+            response.likes.splice(response.likes.indexOf(id), 1);
+
+            response = {
+                ...response,
+                likes: response.likes
+            };
+
+            return this.http.put(`${API_URL}/users/${idUsuario}`, response, options).toPromise();
+        });
+
+    }
+
     async getByPublisherId(id: number): Promise<PublicacaoModel[]> {
         const options = await this.getHttpOptions();
 
@@ -65,7 +104,7 @@ export class PublicacaoService {
                                 item.secoes,
                             );
                         }
-                    )
+                    );
                 }
             )
         ).toPromise();

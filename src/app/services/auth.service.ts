@@ -63,7 +63,6 @@ export class AuthService {
             nome,
             matricula
         };
-        console.log(data);
         return this.http.post(`${API_URL}/auth/register`, data).toPromise();
     }
 
@@ -82,8 +81,6 @@ export class AuthService {
     }
 
     async getAuthToken() {
-        console.log(TOKEN_KEY);
-        console.log(await this.storage.get(TOKEN_KEY));
         return this.storage.get(TOKEN_KEY);
     }
 }
