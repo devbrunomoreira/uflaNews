@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { PublicacaoModel } from '../models/publicacao.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {
+  UsuarioModel
+} from '../models/usuario.model';
 
 import { map } from 'rxjs/operators';
 import { AuthService } from './auth.service';
@@ -48,12 +51,12 @@ export class PublicacaoService {
     }
 
 
-    async inscrever(id: number): Promise<void> {
+    async curtir(id: number): Promise<void> {
         const options = await this.getHttpOptions();
 
         const idUsuario = 1; // Id do usuario logado
 
-        this.http.get(`${API_URL}/users/${idUsuario}`, options).toPromise().then((response) => {
+        this.http.get(`${API_URL}/users/${idUsuario}`, options).toPromise().then((response :UsuarioModel) => {
 
             response.likes ? response.likes.indexOf(id) === -1 && response.likes.push(id) : response.likes = [id];
 
@@ -62,17 +65,27 @@ export class PublicacaoService {
                 likes: response.likes
             };
 
-            return this.http.put(`${API_URL}/users/${idUsuario}`, response, options).toPromise();
+            this.http.put(`${API_URL}/users/${idUsuario}`, response, options).toPromise().then(()=>{
+                this.http.get(`${API_URL}/publicacao/${id}`, options).toPromise().then((publicacao :PublicacaoModel)=>{
+
+                  publicacao = {
+                    ...publicacao,
+                    likes: publicacao.likes + 1
+                  }
+
+                  return this.http.put(`${API_URL}/publicacao/${id}`,publicacao, options).toPromise();
+                })
+            });
         });
 
     }
 
-    async desinscrever(id: number): Promise<void> {
+    async descurtir(id: number): Promise<void> {
         const options = await this.getHttpOptions();
 
         const idUsuario = 1; // Id do usuario logado
 
-        this.http.get(`${API_URL}/users/${idUsuario}`, options).toPromise().then((response) => {
+        this.http.get(`${API_URL}/users/${idUsuario}`, options).toPromise().then((response :UsuarioModel) => {
 
             response.likes.splice(response.likes.indexOf(id), 1);
 
@@ -81,7 +94,17 @@ export class PublicacaoService {
                 likes: response.likes
             };
 
-            return this.http.put(`${API_URL}/users/${idUsuario}`, response, options).toPromise();
+            this.http.put(`${API_URL}/users/${idUsuario}`, response, options).toPromise().then(()=>{
+                this.http.get(`${API_URL}/publicacao/${id}`, options).toPromise().then((publicacao :PublicacaoModel)=>{
+
+                  publicacao = {
+                    ...publicacao,
+                    likes: publicacao.likes - 1
+                  }
+
+                  return this.http.put(`${API_URL}/publicacao/${id}`,publicacao, options).toPromise();
+                })
+            });
         });
 
     }

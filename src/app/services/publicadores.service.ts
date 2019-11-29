@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { PublicadoresModel } from '../models/publicadores.model';
+import { UsuarioModel} from '../models/usuario.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { map } from 'rxjs/operators';
@@ -65,5 +66,63 @@ export class PublicadoresService {
                 }
             )
         ).toPromise();
+    }
+
+    async inscrever(id: number): Promise<void> {
+        const options = await this.getHttpOptions();
+
+        const idUsuario = 1; // Id do usuario logado
+
+        this.http.get(`${API_URL}/users/${idUsuario}`, options).toPromise().then((response :UsuarioModel) => {
+
+            response.publicadoresInscritos ? response.publicadoresInscritos.indexOf(id) === -1 && response.publicadoresInscritos.push(id) : response.publicadoresInscritos = [id];
+
+            response = {
+                ...response,
+                publicadoresInscritos: response.publicadoresInscritos
+            };
+
+            this.http.put(`${API_URL}/users/${idUsuario}`, response, options).toPromise().then(()=>{
+                this.http.get(`${API_URL}/publicadores/${id}`, options).toPromise().then((publicador :PublicadoresModel)=>{
+
+                  publicador = {
+                    ...publicador,
+                    nInscritos: publicador.nInscritos + 1
+                  }
+
+                  return this.http.put(`${API_URL}/publicadores/${id}`,publicador, options).toPromise();
+                })
+            });
+        });
+
+    }
+
+    async desinscrever(id: number): Promise<void> {
+        const options = await this.getHttpOptions();
+
+        const idUsuario = 1; // Id do usuario logado
+
+        this.http.get(`${API_URL}/users/${idUsuario}`, options).toPromise().then((response :UsuarioModel) => {
+
+            response.publicadoresInscritos.splice(response.publicadoresInscritos.indexOf(id), 1);
+
+            response = {
+                ...response,
+                publicadoresInscritos: response.publicadoresInscritos
+            };
+
+            this.http.put(`${API_URL}/users/${idUsuario}`, response, options).toPromise().then(()=>{
+                this.http.get(`${API_URL}/publicadores/${id}`, options).toPromise().then((publicador :PublicadoresModel)=>{
+
+                  publicador = {
+                    ...publicador,
+                    nInscritos: publicador.nInscritos - 1
+                  }
+
+                  return this.http.put(`${API_URL}/publicadores/${id}`,publicador, options).toPromise();
+                })
+            });
+        });
+
     }
 }

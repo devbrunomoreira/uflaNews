@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { UsuarioService } from '../services/usuario.service';
+import { PublicadoresService } from '../services/publicadores.service';
+import { UsuarioModel } from '../models/usuario.model';
+import { PublicadoresModel} from '../models/publicadores.model';
 
 @Component({
   selector: 'app-usuario',
@@ -7,32 +12,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsuarioPage implements OnInit {
 
-  usuario = {
-    nome: "Lula Livre",
-    identificacao: "201420541",
-    email: "lula.livre@gmail.com"
-  };
+public id: number;
+public usuario: UsuarioModel;
+public publicadores: PublicadoresModel[] = [];
 
-  publicadores = [
-    {
-      id: 0,
-      titulo: 'Restaurante Universitário',
-      nPublicacoes: 1,
-      nInscritos: 2,
-      image: '../assets/icon/restaurante-universitario.jpg'
-    },
-    {
-      id: 1,
-      titulo: 'PRG UFLA',
-      nPublicacoes: 2,
-      nInscritos: 3,
-      image: 'https://img.elo7.com.br/product/zoom/13F22D3/2-bases-quadradas-com-velas-quadradas-castical-pequeno.jpg'
-    }
-  ];
+  constructor(public usuarioService: UsuarioService,public activatedRoute: ActivatedRoute,public publicadoresService: PublicadoresService) { }
 
-  constructor() { }
-
-  ngOnInit() {
+  async ngOnInit() {
+    this.id = parseInt(this.activatedRoute.snapshot.paramMap.get('id'));
+    this.usuario = await this.usuarioService.getUserById(this.id);
+    this.usuario.publicadoresInscritos.forEach(async (publicador) => {
+      this.publicadores.push(await this.publicadoresService.getById(publicador));
+    });
   }
 
 }

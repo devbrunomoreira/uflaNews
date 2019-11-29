@@ -1,39 +1,52 @@
-
 {
-  "publicadores":[
+  "publicadores": [
     {
       "id": 0,
       "titulo": "Restaurante Universitário",
-      "publicacoes": [0, 1],
-      "nInscritos": 2,
+      "publicacoes": [
+        0,
+        1
+      ],
+      "nInscritos": 3,
       "image": "../assets/icon/restaurante-universitario.jpg"
     },
     {
       "id": 1,
       "titulo": "PRG UFLA",
-      "publicacoes": [2,3],
+      "publicacoes": [
+        2,
+        3
+      ],
       "nInscritos": 7,
       "image": "http://www.ufla.br/ascom/wp-content/uploads/2017/07/predio-pro-reitorias.jpg"
     }
   ],
-
   "users": [
     {
       "id": 0,
       "nome": "Bruno Jahel",
       "email": "brunojahel@gmail.com",
-      "likes": [0,1,2],
-      "publicadoresInscritos": [1,2]
+      "likes": [
+        0,
+        1,
+        2
+      ],
+      "publicadoresInscritos": [
+        1,
+        2
+      ]
     },
     {
       "id": 1,
       "nome": "Guilherme Teixeira",
       "email": "guiiteixeira@gmail.com",
-      "likes": [2],
-      "publicadoresInscritos": [0,1,2]
+      "likes": [],
+      "publicadoresInscritos": [
+        1,
+        2
+      ]
     }
   ],
-
   "publicacao": [
     {
       "id": 0,
@@ -41,7 +54,7 @@
       "titulo": "Bife de Chorizo agora no RU!",
       "data": "2019-09-15T20:42",
       "img_url": "http://salegrillchurrascaria.com.br/blog/wp-content/uploads/2017/07/102005-bife-de-chorizo-e-chourico-tire-suas-duvidas-e-entenda-de-vez-a-diferenca-1000x640.jpg",
-      "likes": 624,
+      "likes": 626,
       "secoes": [
         {
           "titulo": "Cardápio de hoje",
@@ -112,7 +125,6 @@
       ]
     }
   ],
-
   "comentarios": [
     {
       "id": 0,

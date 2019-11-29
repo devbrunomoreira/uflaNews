@@ -11,7 +11,7 @@
 </ion-header>
 
 <ion-content>
-  <app-publicacao-header [titulo]="publicacao.titulo" [data]="publicacao.data | date:'dd/MM/yyyy - HH:mm'" [likes]="publicacao.likes" [img_url]="publicacao.img_url"></app-publicacao-header>
+  <app-publicacao-header [id]="publicacao.id" [titulo]="publicacao.titulo" [data]="publicacao.data | date:'dd/MM/yyyy - HH:mm'" [likes]="publicacao.likes" [img_url]="publicacao.img_url"></app-publicacao-header>
   <app-publicacao-content-card [secoes]="publicacao.secoes"></app-publicacao-content-card>
 
   <ion-card id="make-comment-component">

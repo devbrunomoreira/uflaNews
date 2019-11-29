@@ -4,6 +4,6 @@ export class UsuarioModel {
         public nome: string,
         public email: string,
         public likes: Array<number>,
-        public publicadoresIncritos: Array<number>
+        public publicadoresInscritos: Array<number>
     ) { }
 }

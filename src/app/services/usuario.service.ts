@@ -33,7 +33,7 @@ export class UsuarioService {
             map(
                 (users: UsuarioModel[]) => {
                     const user = users[0];
-                    return (users.length == 0) ? null : new UsuarioModel(user.id, user.nome, user.email, user.likes, user.publicadoresIncritos);
+                    return (users.length == 0) ? null : new UsuarioModel(user.id, user.nome, user.email, user.likes, user.publicadoresInscritos);
                 }
             )
         ).toPromise();
@@ -49,7 +49,7 @@ export class UsuarioService {
                         user.nome,
                         user.email,
                         user.likes,
-                        user.publicadoresIncritos
+                        user.publicadoresInscritos
                     )
                 }
             )

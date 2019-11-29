@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 
 import { PublicacaoModel } from '../models/publicacao.model';
-import {PublicacaoService} from "../services/publicacao.service";
+import {PublicadoresService} from "../services/publicadores.service";
 
 @Component({
   selector: 'app-card',
@@ -12,7 +12,7 @@ export class CardComponent implements OnInit {
 
   @Input() id: number;
   @Input() titulo: string;
-  @Input() nInscritos: string;
+  @Input() nInscritos: number;
   @Input() nPublicacoes: string;
   @Input() image: string;
 
@@ -20,7 +20,7 @@ export class CardComponent implements OnInit {
   acao = 'Inscrever';
   icon = 'add';
 
-  constructor(public publicacaoService: PublicacaoService) {
+  constructor(public publicadoresService: PublicadoresService) {
 
   }
 
@@ -30,17 +30,19 @@ export class CardComponent implements OnInit {
     this.card_button = document.getElementById("card-button-" + String(this.id)) as HTMLElement;
 
     if (this.acao === 'Desinscrever') {
-      await this.publicacaoService.desinscrever(this.id)
       this.acao = 'Inscrever';
       this.icon = 'add';
       this.card_button.style.color = '#008639';
       this.card_button.style.borderColor = '#008639';
+      await this.publicadoresService.desinscrever(this.id);
+      this.nInscritos -= 1;
     } else {
-      await this.publicacaoService.inscrever(this.id);
       this.acao = 'Desinscrever';
       this.icon = 'remove';
       this.card_button.style.color = '#EE6611';
       this.card_button.style.borderColor = '#EE6611';
+      await this.publicadoresService.inscrever(this.id);
+      this.nInscritos += 1;
     }
   }
 

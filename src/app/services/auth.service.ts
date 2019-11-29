@@ -66,6 +66,11 @@ export class AuthService {
         return this.http.post(`${API_URL}/auth/register`, data).toPromise();
     }
 
+    async isUserRegistered(email: string) {
+      this.http.get(`${API_URL}/users?email=${email}`).toPromise()
+        .then(response => console.log(response));
+    }
+
     async logout() {
         await this.storage.remove(TOKEN_KEY);
         await this.storage.remove(EMAIL_KEY);
