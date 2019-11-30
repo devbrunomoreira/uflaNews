@@ -5,13 +5,14 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
-import {CardComponent} from "../card/card.component";
+import {SharedModule} from '../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    SharedModule,
     RouterModule.forChild([
       {
         path: '',
@@ -19,6 +20,6 @@ import {CardComponent} from "../card/card.component";
       }
     ])
   ],
-  declarations: [HomePage, CardComponent]
+  declarations: [HomePage]
 })
 export class HomePageModule {}

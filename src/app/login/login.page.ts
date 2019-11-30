@@ -21,7 +21,7 @@ export class LoginPage implements OnInit {
 
   async ngOnInit() {
     if (await this.authService.isAuthenticated()) {
-      await this.router.navigate(['/']);
+      await this.router.navigate(['/home']);
     } else {
       await this.router.navigate(['/login']);
     }
@@ -30,7 +30,7 @@ export class LoginPage implements OnInit {
   async login() {
     await this.authService.login(this.email, this.senha);
     if (await this.authService.isAuthenticated()) {
-      await this.router.navigate(['/']);
+      await this.router.navigate(['/home']);
     } else {
       await this.router.navigate(['/login']);
     }

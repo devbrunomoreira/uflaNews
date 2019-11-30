@@ -32,19 +32,16 @@
         2
       ],
       "publicadoresInscritos": [
-        1,
-        2
+        0,
+        1
       ]
     },
     {
       "id": 1,
       "nome": "Guilherme Teixeira",
       "email": "guiiteixeira@gmail.com",
-      "likes": [],
-      "publicadoresInscritos": [
-        1,
-        2
-      ]
+      "likes": [0,1],
+      "publicadoresInscritos": [0,1]
     }
   ],
   "publicacao": [

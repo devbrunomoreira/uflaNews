@@ -29,7 +29,7 @@ export class UsuarioService {
     async getUserByEmail(email: string) {
         const options = await this.getHttpOptions();
 
-        return this.http.get(`${API_URL}/usuarios?email=${email}`, options).pipe(
+        return this.http.get(`${API_URL}/users?email=${email}`, options).pipe(
             map(
                 (users: UsuarioModel[]) => {
                     const user = users[0];
@@ -39,9 +39,9 @@ export class UsuarioService {
         ).toPromise();
     }
 
-    async getUserById(id: number) {
+    async getUserById(id: number): UsuarioModel {
         const options = await this.getHttpOptions();
-        return this.http.get(`${API_URL}/usuarios/${id}`, options).pipe(
+        this.http.get(`${API_URL}/users/${id}`, options).pipe(
             map(
                 (user: UsuarioModel) => {
                     return new UsuarioModel(
@@ -53,7 +53,7 @@ export class UsuarioService {
                     )
                 }
             )
-        ).toPromise();
+        ).toPromise().then(response => {return response});
     }
 
     async add(user: UsuarioModel, token: string) {
@@ -63,6 +63,6 @@ export class UsuarioService {
             })
         };
 
-        return this.http.post(`${API_URL}/usuarios`, user, options).toPromise();
+        return this.http.post(`${API_URL}/users`, user, options).toPromise();
     }
 }

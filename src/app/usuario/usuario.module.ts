@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { UsuarioPage } from './usuario.page';
 
-import {CardComponent} from "../card/card.component";
+import {SharedModule} from '../shared/shared.module';
 
 const routes: Routes = [
   {
@@ -21,8 +21,9 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
+    SharedModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [UsuarioPage,CardComponent]
+  declarations: [UsuarioPage]
 })
 export class UsuarioPageModule {}
