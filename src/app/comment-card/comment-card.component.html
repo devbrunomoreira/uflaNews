@@ -9,7 +9,7 @@
       <ion-icon class="pre-icon" name="person"></ion-icon>{{comment.nomeUsuario}}
     </ion-col>
     <ion-col>
-      <ion-icon class="pre-icon" name="time" ></ion-icon>{{comment.timestamp}}
+      <ion-icon class="pre-icon" name="time" ></ion-icon>{{comment.timestamp | date:'dd/MM/yyyy - HH:mm'}}
     </ion-col>
   </ion-row>
 </ion-card>

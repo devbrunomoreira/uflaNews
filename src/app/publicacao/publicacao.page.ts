@@ -37,13 +37,19 @@ export class PublicacaoPage implements OnInit {
     ],
   };
   public comentarios: ComentarioModel[];
+  public newComment: string;
 
   constructor(public publicacaoService: PublicacaoService, public comentarioService: ComentarioService, public usuarioService: UsuarioService, public activatedRoute: ActivatedRoute, private _location: Location) { }
 
   async ngOnInit() {
     this.id = parseInt(this.activatedRoute.snapshot.paramMap.get('id'));
     this.publicacao = await this.publicacaoService.getById(this.id);
-    this.comentarios = await this.comentarioService.getAll(this.publicacao.id);    
+    this.comentarios = await this.comentarioService.getAll(this.publicacao.id);
+  }
+
+  comentar = async () => {
+    const comentario = await this.comentarioService.comentar(this.newComment,this.publicacao.id);
+    this.comentarios.push(comentario);
   }
 
 }

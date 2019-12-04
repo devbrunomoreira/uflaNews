@@ -14,21 +14,23 @@
   <app-publicacao-header [id]="publicacao.id" [titulo]="publicacao.titulo" [data]="publicacao.data | date:'dd/MM/yyyy - HH:mm'" [likes]="publicacao.likes" [img_url]="publicacao.img_url"></app-publicacao-header>
   <app-publicacao-content-card [secoes]="publicacao.secoes"></app-publicacao-content-card>
 
+  <h3>Comentários</h3>
+
+  <app-comment-card [comments]="comentarios"></app-comment-card>
+
   <ion-card id="make-comment-component">
     <form id="comment-form">
       <ion-row>
         <ion-col>
-          <textarea rows="4" cols="40" placeholder="Escrever comentário .."></textarea>
+          <textarea rows="4" cols="40" placeholder="Escrever comentário .." name="newComment" [(ngModel)]="newComment"></textarea>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col id="submmit">
-          <ion-button color="white" id="submmit-button">Enviar</ion-button>
+          <ion-button color="white" (click)="comentar()" id="submmit-button">Enviar</ion-button>
         </ion-col>
       </ion-row>
     </form>
   </ion-card>
-
-  <app-comment-card [comments]="comentarios"></app-comment-card>
 
 </ion-content>

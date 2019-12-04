@@ -5,6 +5,7 @@ import { AuthService } from './auth.service';
 import { map } from "rxjs/operators";
 
 const API_URL: string = "http://localhost:8000";
+const EMAIL_KEY = 'auth-userid';
 
 @Injectable({
     providedIn: 'root'
@@ -36,7 +37,7 @@ export class UsuarioService {
                     return (users.length == 0) ? null : new UsuarioModel(user.id, user.nome, user.email, user.likes, user.matricula, user.publicadoresInscritos);
                 }
             )
-        ).toPromise().then(response => {return response});
+        ).toPromise();
     }
 
     async getUserById(id: number): Promise<UsuarioModel> {
@@ -57,13 +58,10 @@ export class UsuarioService {
         ).toPromise();
     }
 
-    async add(user: UsuarioModel, token: string) {
-        const options = {
-            headers: new HttpHeaders({
-                'Authorization': `Bearer ${token}`
-            })
-        };
-
-        return this.http.post(`${API_URL}/users`, user, options).toPromise();
+    async getLoggedUser():Promise<UsuarioModel>{
+      const email = await this.authService.getAuthEmail();
+      return await this.getUserByEmail(email);
     }
+
+
 }

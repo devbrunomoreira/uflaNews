@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken')
 
 const server = jsonServer.create()
 const router = jsonServer.router('./database.json')
-const userdb = JSON.parse(fs.readFileSync('./users.json', 'UTF-8'))
+const userdb = JSON.parse(fs.readFileSync('./database.json', 'UTF-8'))
 
 server.use(bodyParser.urlencoded({extended: true}))
 server.use(bodyParser.json())
@@ -34,16 +34,16 @@ function isAuthenticated({email, password}){
 server.post('/auth/register', (req, res) => {
   console.log("register endpoint called; request body:");
   console.log(req.body);
-  const {email, password} = req.body;
+  const {email, password, matricula, likes, nome, publicadoresInscritos} = req.body;
 
-  if(isAuthenticated({email, password}) === true) {
+  if(isAuthenticated({email, password, matricula, nome}) === true) {
     const status = 401;
     const message = 'Email and Password already exist';
     res.status(status).json({status, message});
     return
   }
 
-fs.readFile("./users.json", (err, data) => {
+fs.readFile("./database.json", (err, data) => {
     if (err) {
       const status = 401
       const message = err
@@ -58,8 +58,8 @@ fs.readFile("./users.json", (err, data) => {
     var last_item_id = data.users[data.users.length-1].id;
 
     //Add new user
-    data.users.push({id: last_item_id + 1, email: email, password: password}); //add some data
-    var writeData = fs.writeFile("./users.json", JSON.stringify(data), (err, result) => {  // WRITE
+    data.users.push({id: last_item_id + 1, email: email, password: password, nome: nome, matricula: matricula, likes:[], publicadoresInscritos:[]}); //add some data
+    var writeData = fs.writeFile("./database.json", JSON.stringify(data), (err, result) => {  // WRITE
         if (err) {
           const status = 401
           const message = err
@@ -72,8 +72,9 @@ fs.readFile("./users.json", (err, data) => {
 // Create token for new user
   const access_token = createToken({email, password})
   console.log("Access Token:" + access_token);
-  res.status(200).json({access_token})
-})
+  res.status(200).json({access_token});
+
+});
 
 // Login to one of the users from ./users.json
 server.post('/auth/login', (req, res) => {

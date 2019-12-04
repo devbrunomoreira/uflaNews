@@ -39,14 +39,25 @@
     {
       "id": 1,
       "nome": "Guilherme Teixeira",
-      "email": "guiiteixeira@gmail.com",
+      "email": "guisebastian15@gmail.com",
       "likes": [
-        1
+        0,
+        1,
+        2
       ],
       "publicadoresInscritos": [
         0,
         1
       ]
+    },
+    {
+      "id": 2,
+      "email": "juju@email.com",
+      "password": "123",
+      "nome": "juju",
+      "matricula": "123",
+      "likes": [],
+      "publicadoresInscritos": []
     }
   ],
   "publicacao": [
@@ -133,35 +144,63 @@
       "idPublicacao": 0,
       "nomeUsuario": "Bruno Jahel",
       "comentario": "Gostei muito da publicação, vou continuar seguindo para ver sempre as noticias",
-      "timestamp": "20/12/2012 - 12:12"
+      "timestamp": "2019-12-04T22:46:42.571Z"
     },
     {
       "id": 1,
       "idPublicacao": 0,
       "nomeUsuario": "Lucas Alves",
       "comentario": "Concordo, também vou continuar seguindo, gostei do cardápio de hoje",
-      "timestamp": "20/12/2012 - 12:35"
+      "timestamp": "2019-12-04T22:46:42.571Z"
     },
     {
       "id": 2,
       "idPublicacao": 0,
       "nomeUsuario": "Guilherme Teixeira",
       "comentario": "Não gosto de chorizo, prefiro bife à rolê",
-      "timestamp": "20/12/2012 - 15:25"
+      "timestamp": "2019-12-04T22:46:42.571Z"
     },
     {
       "id": 3,
       "idPublicacao": 1,
       "nomeUsuario": "Guilherme Teixeira",
       "comentario": "Eu amooooooo lasanha",
-      "timestamp": "20/12/2012 - 12:35"
+      "timestamp": "2019-12-04T22:46:42.571Z"
     },
     {
       "id": 4,
       "idPublicacao": 1,
       "nomeUsuario": "Bruno Jahel",
       "comentario": "Massa",
-      "timestamp": "20/12/2012 - 12:35"
+      "timestamp": "2019-12-04T22:46:42.571Z"
+    },
+    {
+      "id": 5,
+      "idPublicacao": 0,
+      "nomeUsuario": "juju",
+      "comentario": "ruim",
+      "timestamp": "2019-12-04T22:46:42.571Z"
+    },
+    {
+      "id": 6,
+      "idPublicacao": 0,
+      "nomeUsuario": "juju",
+      "comentario": "drtustu",
+      "timestamp": "2019-12-04T23:01:27.494Z"
+    },
+    {
+      "id": 7,
+      "idPublicacao": 0,
+      "nomeUsuario": "juju",
+      "comentario": "tudtuy",
+      "timestamp": "2019-12-04T23:02:43.383Z"
+    },
+    {
+      "id": 8,
+      "idPublicacao": 2,
+      "nomeUsuario": "juju",
+      "comentario": "lulindo",
+      "timestamp": "2019-12-04T23:10:19.092Z"
     }
   ]
 }

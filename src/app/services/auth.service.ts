@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Platform } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
+import {UsuarioModel} from '../models/usuario.model';
 import { map } from 'rxjs/operators';
 
 const TOKEN_KEY = 'auth-token';
@@ -63,6 +64,7 @@ export class AuthService {
             nome,
             matricula
         };
+
         return this.http.post(`${API_URL}/auth/register`, data).toPromise();
     }
 
@@ -81,11 +83,21 @@ export class AuthService {
         return this.authState.value;
     }
 
-    async getAuthEmail() {
+    async getAuthEmail() : Promise<string>{
         return this.storage.get(EMAIL_KEY);
     }
 
-    async getAuthToken() {
+    async getAuthToken(): Promise<string> {
         return this.storage.get(TOKEN_KEY);
+    }
+
+    async add(user: UsuarioModel, token: string) {
+        const options = {
+            headers: new HttpHeaders({
+                'Authorization': `Bearer ${token}`
+            })
+        };
+
+        return this.http.post(`${API_URL}/users`, user, options).toPromise();
     }
 }
