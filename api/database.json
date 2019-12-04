@@ -40,8 +40,13 @@
       "id": 1,
       "nome": "Guilherme Teixeira",
       "email": "guiiteixeira@gmail.com",
-      "likes": [0,1],
-      "publicadoresInscritos": [0,1]
+      "likes": [
+        1
+      ],
+      "publicadoresInscritos": [
+        0,
+        1
+      ]
     }
   ],
   "publicacao": [

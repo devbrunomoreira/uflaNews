@@ -26,22 +26,22 @@ export class UsuarioService {
         return options;
     }
 
-    async getUserByEmail(email: string) {
+    async getUserByEmail(email: string) : Promise<UsuarioModel> {
         const options = await this.getHttpOptions();
 
         return this.http.get(`${API_URL}/users?email=${email}`, options).pipe(
             map(
                 (users: UsuarioModel[]) => {
                     const user = users[0];
-                    return (users.length == 0) ? null : new UsuarioModel(user.id, user.nome, user.email, user.likes, user.publicadoresInscritos);
+                    return (users.length == 0) ? null : new UsuarioModel(user.id, user.nome, user.email, user.likes, user.matricula, user.publicadoresInscritos);
                 }
             )
-        ).toPromise();
+        ).toPromise().then(response => {return response});
     }
 
-    async getUserById(id: number): UsuarioModel {
+    async getUserById(id: number): Promise<UsuarioModel> {
         const options = await this.getHttpOptions();
-        this.http.get(`${API_URL}/users/${id}`, options).pipe(
+        return this.http.get(`${API_URL}/users/${id}`, options).pipe(
             map(
                 (user: UsuarioModel) => {
                     return new UsuarioModel(
@@ -49,11 +49,12 @@ export class UsuarioService {
                         user.nome,
                         user.email,
                         user.likes,
+                        user.matricula,
                         user.publicadoresInscritos
                     )
                 }
             )
-        ).toPromise().then(response => {return response});
+        ).toPromise();
     }
 
     async add(user: UsuarioModel, token: string) {

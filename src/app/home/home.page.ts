@@ -10,10 +10,25 @@ import { PublicadoresService } from '../services/publicadores.service';
 export class HomePage implements OnInit {
 
   listaDePublicadores: PublicadoresModel[];
+  searchInput: string;
 
   constructor(public publicadoresService: PublicadoresService) { }
 
   async ngOnInit() {
+    this.searchInput = "";
     this.listaDePublicadores = await this.publicadoresService.getAll();
-  } 
+  }
+
+  search = async () => {
+    if(this.searchInput.trim() == ""){
+      this.listaDePublicadores = await this.publicadoresService.getAll();
+    }else{
+      this.listaDePublicadores = await this.publicadoresService.getSearched(this.searchInput);
+    }
+  }
+
+  searchAll = async () => {
+    this.listaDePublicadores = await this.publicadoresService.getAll();
+    this.searchInput = "";
+  }
 }

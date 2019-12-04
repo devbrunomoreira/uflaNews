@@ -50,6 +50,28 @@ export class PublicadoresService {
         ).toPromise();
     }
 
+    async getSearched(search: string): Promise<PublicadoresModel[]> {
+        const options = await this.getHttpOptions();
+
+        return this.http.get(`${API_URL}/publicadores?q=${search}`, options).pipe(
+            map(
+                (itens: PublicadoresModel[]) => {
+                    return itens.map(
+                        (item: PublicadoresModel) => {
+                            return new PublicadoresModel(
+                                item.id,
+                                item.titulo,
+                                item.publicacoes,
+                                item.nInscritos,
+                                item.image
+                            );
+                        }
+                    );
+                }
+            )
+        ).toPromise();
+    }
+
     async getById(id: number): Promise<PublicadoresModel> {
         const options = await this.getHttpOptions();
 
