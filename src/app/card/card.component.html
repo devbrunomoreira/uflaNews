@@ -19,7 +19,7 @@
           </ion-col>
       </ion-row>
       <ion-row>
-        <ion-button color="white" (click)="clickInscreverButton()" class="card-button" id="card-button-{{id}}" >{{acao}}<ion-icon name="{{icon}}" class="card-button-icon"></ion-icon></ion-button>
+        <ion-button color="white" (click)="clickInscreverButton()" class="card-button" id="card-button-{{id}}" [ngStyle]="{'color': color,'border-color': color}">{{acao}}<ion-icon name="{{icon}}" class="card-button-icon"></ion-icon></ion-button>
       </ion-row>
     </ion-col>
   </ion-row>

@@ -12,19 +12,23 @@ import { PublicadoresModel} from '../models/publicadores.model';
 })
 export class UsuarioPage implements OnInit {
 
-public usuario: UsuarioModel;
+public usuario: UsuarioModel = new UsuarioModel(null,"","teste",[],"",[]);
 public publicadores: PublicadoresModel[] = [];
 
-  constructor(public usuarioService: UsuarioService,public activatedRoute: ActivatedRoute,public publicadoresService: PublicadoresService) { }
-
-  async ngOnInit() {
-
-    this.usuario = await this.usuarioService.getLoggedUser();
-
-    this.usuario.publicadoresInscritos.forEach(async (publicadorId) => {
-        const publicador = await this.publicadoresService.getById(publicadorId);
-        this.publicadores.push(publicador);
+  constructor(public usuarioService: UsuarioService,public activatedRoute: ActivatedRoute,public publicadoresService: PublicadoresService) {
+    this.usuarioService.getLoggedUser().then((user) => {
+      this.usuario = user;
+      this.usuario.publicadoresInscritos.forEach((publicadorId) => {
+          this.publicadoresService.getById(publicadorId).then((publicador) => {
+            this.publicadores.push(publicador);
+          });
+      });
     });
+   }
+
+  ngOnInit() {
+
+
   }
 
 }

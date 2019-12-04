@@ -7,7 +7,7 @@
         0,
         1
       ],
-      "nInscritos": 3,
+      "nInscritos": 4,
       "image": "../assets/icon/restaurante-universitario.jpg"
     },
     {
@@ -26,6 +26,8 @@
       "id": 0,
       "nome": "Bruno Jahel",
       "email": "brunojahel@gmail.com",
+      "password": "123",
+      "matricula": "123",
       "likes": [
         0,
         1,
@@ -39,6 +41,8 @@
     {
       "id": 1,
       "nome": "Guilherme Teixeira",
+      "password": "123",
+      "matricula": "123",
       "email": "guisebastian15@gmail.com",
       "likes": [
         0,
@@ -53,8 +57,8 @@
     {
       "id": 2,
       "email": "juju@email.com",
-      "password": "123",
       "nome": "juju",
+      "password": "123",
       "matricula": "123",
       "likes": [],
       "publicadoresInscritos": []
