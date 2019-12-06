@@ -9,7 +9,7 @@ import { map } from 'rxjs/operators';
 const TOKEN_KEY = 'auth-token';
 const EMAIL_KEY = 'auth-userid';
 
-const API_URL = 'http://localhost:8000';
+const API_URL = 'http://localhost:3000';
 
 @Injectable({
     providedIn: 'root'
@@ -41,7 +41,7 @@ export class AuthService {
             password
         };
 
-        const token = await this.http.post(`${API_URL}/auth/login`, data).pipe(
+        const token = await this.http.post(`${API_URL}/login`, data).pipe(
             map(
                 (item: any) => {
                     return item.access_token;
@@ -65,7 +65,7 @@ export class AuthService {
             matricula
         };
 
-        return this.http.post(`${API_URL}/auth/register`, data).toPromise();
+        return this.http.post(`${API_URL}/register`, data).toPromise();
     }
 
     async isUserRegistered(email: string) {

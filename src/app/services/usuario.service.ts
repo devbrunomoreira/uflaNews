@@ -4,7 +4,7 @@ import { UsuarioModel } from '../models/usuario.model';
 import { AuthService } from './auth.service';
 import { map } from "rxjs/operators";
 
-const API_URL: string = "http://localhost:8000";
+const API_URL: string = "http://localhost:3000";
 const EMAIL_KEY = 'auth-userid';
 
 @Injectable({

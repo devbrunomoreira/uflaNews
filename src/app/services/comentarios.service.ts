@@ -7,7 +7,7 @@ import {UsuarioService} from './usuario.service';
 import { map } from "rxjs/operators";
 import { AuthService } from './auth.service';
 
-const API_URL: string = "http://localhost:8000";
+const API_URL: string = "http://localhost:3000";
 
 @Injectable({
     providedIn: 'root'

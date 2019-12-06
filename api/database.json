@@ -23,46 +23,11 @@
   ],
   "users": [
     {
-      "id": 0,
-      "nome": "Bruno Jahel",
-      "email": "brunojahel@gmail.com",
-      "password": "123",
-      "matricula": "123",
-      "likes": [
-        0,
-        1,
-        2
-      ],
-      "publicadoresInscritos": [
-        0,
-        1
-      ]
-    },
-    {
-      "id": 1,
-      "nome": "Guilherme Teixeira",
-      "password": "123",
-      "matricula": "123",
-      "email": "guisebastian15@gmail.com",
-      "likes": [
-        0,
-        1,
-        2,
-        3
-      ],
-      "publicadoresInscritos": [
-        0,
-        1
-      ]
-    },
-    {
-      "id": 2,
-      "email": "juju@email.com",
-      "nome": "juju",
-      "password": "123",
-      "matricula": "123",
-      "likes": [],
-      "publicadoresInscritos": []
+      "email": "brunormoreira@outlook.com",
+      "password": "$2a$10$EFHSlT39l0lmJkVWxoWc/OlbeEOi3zBSJfPckdTXK4.4s/sVdkYI.",
+      "nome": "201510323",
+      "matricula": "bruno",
+      "id": 3
     }
   ],
   "publicacao": [
