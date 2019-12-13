@@ -56,8 +56,6 @@ export class AuthService {
             this.authState.next(true);
             return "Login efetuado com sucesso.";
         }
-
-        return "Credenciais Incorretas!";
     }
 
     async register(email: string, password: string, nome: string, matricula: string) {

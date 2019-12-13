@@ -15,8 +15,6 @@ export class LoginPage implements OnInit {
   @Input() email: string;
   @Input() senha: string;
 
-  public message: string;
-
   constructor(
       public authService: AuthService,
       public router: Router,
@@ -32,18 +30,19 @@ export class LoginPage implements OnInit {
   }
 
   async login() {
-    await this.authService.login(this.email, this.senha).then((msg) => {
-      this.message = msg;
-    });
-    const toast = await this.toastController.create({
-      message: this.message,
-      duration: 2000
-    });
-    toast.present();
-    if (await this.authService.isAuthenticated()) {
+    await this.authService.login(this.email, this.senha).then(async (msg) => {
+      const toast = await this.toastController.create({
+        message: msg,
+        duration: 2000
+      });
+      await toast.present();
       await this.router.navigate(['/home']);
-    } else {
-      await this.router.navigate(['/login']);
-    }
+    },async ()=>{
+      const toast = await this.toastController.create({
+        message: "Credenciais Incorretas!",
+        duration: 2000
+      });
+      await toast.present();
+    });
   }
 }
