@@ -7,7 +7,7 @@
         0,
         1
       ],
-      "nInscritos": 6,
+      "nInscritos": 1,
       "image": "../assets/icon/restaurante-universitario.jpg"
     },
     {
@@ -17,17 +17,53 @@
         2,
         3
       ],
-      "nInscritos": 7,
+      "nInscritos": 3,
       "image": "http://www.ufla.br/ascom/wp-content/uploads/2017/07/predio-pro-reitorias.jpg"
     }
   ],
   "users": [
     {
-      "id": 0,
-      "nome": "Bruno Jahel",
-      "email": "brunojahel@gmail.com",
+      "id": 0
+    },
+    {
+      "id": 1,
+      "email": "guisebastian15@gmail.com",
       "password": "123",
-      "matricula": "123",
+      "nome": "Guilherme Teixeira",
+      "matricula": "201620425",
+      "likes": [],
+      "publicadoresInscritos": [
+        1
+      ]
+    },
+    {
+      "id": 2,
+      "email": "ltrodrigues@email.com",
+      "password": "123",
+      "nome": "Livia Rodrigues",
+      "matricula": "201520156",
+      "likes": [
+        2
+      ],
+      "publicadoresInscritos": [
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "email": "pedroca@email.com",
+      "password": "123",
+      "nome": "Pedro Alcantara",
+      "matricula": "201620165",
+      "likes": [],
+      "publicadoresInscritos": []
+    },
+    {
+      "id": 4,
+      "email": "adal@gmail.com",
+      "password": "123",
+      "nome": "Adalberto Augusto",
+      "matricula": "213202132",
       "likes": [
         0,
         1,
@@ -37,31 +73,6 @@
         0,
         1
       ]
-    },
-    {
-      "id": 1,
-      "nome": "Guilherme Teixeira",
-      "password": "123",
-      "matricula": "123",
-      "email": "guisebastian15@gmail.com",
-      "likes": [
-        1,
-        2,
-        3
-      ],
-      "publicadoresInscritos": [
-        1,
-        0
-      ]
-    },
-    {
-      "id": 2,
-      "email": "juju@email.com",
-      "nome": "juju",
-      "password": "123",
-      "matricula": "123",
-      "likes": [],
-      "publicadoresInscritos": []
     }
   ],
   "publicacao": [
@@ -71,7 +82,7 @@
       "titulo": "Bife de Chorizo agora no RU!",
       "data": "2019-09-15T20:42",
       "img_url": "http://salegrillchurrascaria.com.br/blog/wp-content/uploads/2017/07/102005-bife-de-chorizo-e-chourico-tire-suas-duvidas-e-entenda-de-vez-a-diferenca-1000x640.jpg",
-      "likes": 626,
+      "likes": 1,
       "secoes": [
         {
           "titulo": "Cardápio de hoje",
@@ -91,7 +102,7 @@
       "titulo": "Lasanha de frango hoje!",
       "data": "2019-09-15T20:42",
       "img_url": "https://abrilmdemulher.files.wordpress.com/2016/10/receita-lasanha-pratica-bacalhau.jpg",
-      "likes": 245,
+      "likes": 1,
       "secoes": [
         {
           "titulo": "História da lasanha",
@@ -111,7 +122,7 @@
       "titulo": "Lula solto, visita RU da UFLA!",
       "data": "2019-10-15T12:30",
       "img_url": "https://www.dm.com.br/wp-content/uploads/2019/05/ZnHn4dgf_400x400.jpg",
-      "likes": 554321,
+      "likes": 2,
       "secoes": [
         {
           "titulo": "Seção do pokemon ipsum",
@@ -129,7 +140,7 @@
       "titulo": "Prova de suficiência na UFLA!",
       "data": "2019-10-15T12:30",
       "img_url": "https://cdn.pixabay.com/photo/2016/11/29/18/09/correcting-1870721_960_720.jpg",
-      "likes": 554322,
+      "likes": 0,
       "secoes": [
         {
           "titulo": "Novas regras",

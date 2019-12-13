@@ -25,7 +25,7 @@ export class CadastroPage implements OnInit {
 	async registrar() {
 		if (this.senha === this.confirmacaoSenha) {
 			// await this.authService.isUserRegistered(this.email);
-			const token = await this.authService.register(this.email, this.senha, this.matricula, this.nome);
+			const token = await this.authService.register(this.email, this.senha, this.nome, this.matricula);
 			if (token) {
 				await this.router.navigate(['login']);
 			}

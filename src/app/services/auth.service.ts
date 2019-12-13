@@ -35,7 +35,7 @@ export class AuthService {
         }
     }
 
-    async login(email: string, password: string) {
+    async login(email: string, password: string) : Promise<string>{
         const data = {
             email,
             password
@@ -54,7 +54,10 @@ export class AuthService {
             await this.storage.set(EMAIL_KEY, email);
 
             this.authState.next(true);
+            return "Login efetuado com sucesso.";
         }
+
+        return "Credenciais Incorretas!";
     }
 
     async register(email: string, password: string, nome: string, matricula: string) {

@@ -27,7 +27,8 @@ function verifyToken(token){
 
 // Check if the user exists in database
 function isAuthenticated({email, password}){
-  return userdb.users.findIndex(user => user.email === email && user.password === password) !== -1
+
+      return userdb.users.findIndex(user => user.email === email && user.password === password) !== -1;
 }
 
 // Register New User
@@ -97,6 +98,7 @@ server.use(/^(?!\/auth).*$/,  (req, res, next) => {
   if (req.headers.authorization === undefined || req.headers.authorization.split(' ')[0] !== 'Bearer') {
     const status = 401
     const message = 'Error in authorization format'
+    console.log(message);
     res.status(status).json({status, message})
     return
   }
@@ -107,6 +109,7 @@ server.use(/^(?!\/auth).*$/,  (req, res, next) => {
      if (verifyTokenResult instanceof Error) {
        const status = 401
        const message = 'Access token not provided'
+       console.log(message);
        res.status(status).json({status, message})
        return
      }

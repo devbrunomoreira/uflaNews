@@ -1,6 +1,8 @@
 import { Component,Input, OnInit } from '@angular/core';
 import { PublicacaoService } from '../services/publicacao.service';
 
+import {UsuarioService} from '../services/usuario.service';
+
 @Component({
   selector: 'app-publicacao-header',
   templateUrl: './publicacao-header.component.html',
@@ -16,9 +18,16 @@ export class PublicacaoHeaderComponent implements OnInit {
 
   icon = "../../assets/icon/curtir-icon.png";
 
-  constructor(public publicacaoService: PublicacaoService) { }
+  constructor(public publicacaoService: PublicacaoService,public usuarioService: UsuarioService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.usuarioService.getLoggedUser().then((user) => {
+      const usuario = user;
+      if (usuario.likes.findIndex(el => el === this.id) != -1){
+        this.icon = "../../assets/icon/descurtir-icon.png";
+      }
+    });
+  }
 
   clickCurtirButton = async () =>{
     if(this.icon == "../../assets/icon/curtir-icon.png"){
