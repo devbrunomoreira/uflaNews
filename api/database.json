@@ -188,34 +188,6 @@
       "nomeUsuario": "Bruno Jahel",
       "comentario": "Massa",
       "timestamp": "2019-12-04T22:46:42.571Z"
-    },
-    {
-      "id": 5,
-      "idPublicacao": 0,
-      "nomeUsuario": "juju",
-      "comentario": "ruim",
-      "timestamp": "2019-12-04T22:46:42.571Z"
-    },
-    {
-      "id": 6,
-      "idPublicacao": 0,
-      "nomeUsuario": "juju",
-      "comentario": "drtustu",
-      "timestamp": "2019-12-04T23:01:27.494Z"
-    },
-    {
-      "id": 7,
-      "idPublicacao": 0,
-      "nomeUsuario": "juju",
-      "comentario": "tudtuy",
-      "timestamp": "2019-12-04T23:02:43.383Z"
-    },
-    {
-      "id": 8,
-      "idPublicacao": 2,
-      "nomeUsuario": "juju",
-      "comentario": "lulindo",
-      "timestamp": "2019-12-04T23:10:19.092Z"
     }
   ]
 }
