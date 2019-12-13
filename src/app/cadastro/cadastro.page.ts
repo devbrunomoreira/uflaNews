@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {AuthService} from '../services/auth.service';
 import {Router} from '@angular/router';
+import { ToastController } from '@ionic/angular';
 
 @Component({
 	selector: 'app-cadastro',
@@ -16,7 +17,8 @@ export class CadastroPage implements OnInit {
 	 confirmacaoSenha: string;
 
 	constructor(public authService: AuthService,
-	            public router: Router) {
+	            public router: Router,
+				      public toastController: ToastController) {
 	}
 
 	ngOnInit() {
@@ -25,10 +27,17 @@ export class CadastroPage implements OnInit {
 	async registrar() {
 		if (this.senha === this.confirmacaoSenha) {
 			// await this.authService.isUserRegistered(this.email);
-			const token = await this.authService.register(this.email, this.senha, this.nome, this.matricula);
-			if (token) {
-				await this.router.navigate(['login']);
-			}
+			await this.authService.register(this.email, this.senha, this.nome, this.matricula).then(async (response) => {
+					await this.router.navigate(['login']);
+			},
+			async ()=>{
+					const toast = await this.toastController.create({
+		        message: "Erro ao efetuar cadastro!",
+		        duration: 2000
+		      });
+		      await toast.present();
+			});
+
 		}
 	}
 }
