@@ -45,13 +45,12 @@
       "matricula": "123",
       "email": "guisebastian15@gmail.com",
       "likes": [
-        0,
         1,
         2
       ],
       "publicadoresInscritos": [
-        0,
-        1
+        1,
+        0
       ]
     },
     {
