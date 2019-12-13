@@ -7,7 +7,7 @@
         0,
         1
       ],
-      "nInscritos": 4,
+      "nInscritos": 6,
       "image": "../assets/icon/restaurante-universitario.jpg"
     },
     {
@@ -46,7 +46,8 @@
       "email": "guisebastian15@gmail.com",
       "likes": [
         1,
-        2
+        2,
+        3
       ],
       "publicadoresInscritos": [
         1,
@@ -128,7 +129,7 @@
       "titulo": "Prova de suficiência na UFLA!",
       "data": "2019-10-15T12:30",
       "img_url": "https://cdn.pixabay.com/photo/2016/11/29/18/09/correcting-1870721_960_720.jpg",
-      "likes": 554321,
+      "likes": 554322,
       "secoes": [
         {
           "titulo": "Novas regras",
